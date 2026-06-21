@@ -16,17 +16,17 @@ public class EmployeeManager {
         return new ArrayList<>(employees.values());
     }
 
-    public List<Employee> filterEmployeeBySalary(double minSalary){
+    public List<Employee> filterEmployeesBySalary(double minSalary){
         return employees.values().stream()
         .filter(employee -> employee.getSalary().orElse(0.0) >= minSalary)
         .collect(Collectors.toList());
     }
 
-    public List<Employee> sortEmployeeBySalary(){
+    public List<Employee> sortEmployeesBySalary(){
         return employees.values().stream()
         .sorted(Comparator.comparingDouble(employee -> employee.getSalary().orElse(0.0)))
         .collect(Collectors.toList());
     }
-    
+
 
 }
